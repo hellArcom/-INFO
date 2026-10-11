@@ -6,8 +6,9 @@
   <meta name="theme-color" content="#0c1013">
   <meta name="description" content="Menus de secours Windows, raccourcis et astuces technicien.">
   <title>Menus Windows — //INFO</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1&display=block">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
+  <script src="search-index.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -20,62 +21,60 @@
           <span class="brand-sub">DOCUMENTATION INFORMATIQUE</span>
         </span>
       </a>
-      <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav">☰ Menu</button>
-      <button class="nav-toggle" data-search-toggle aria-expanded="false" aria-controls="site-search">⌕ Recherche</button>
+      <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav">☰ <span data-en="Menu">Menu</span></button>
+      <button class="nav-toggle" data-search-toggle aria-expanded="false" aria-controls="site-search">⌕ <span data-en="Search">Recherche</span></button>
       <nav class="site-nav" id="site-nav" data-site-nav aria-label="Navigation principale">
-        <a href="home.html">Accueil</a>
-        <a href="logiciels.html">Logiciels</a>
-        <a href="processeurs.html">Processeurs</a>
-        <a href="commandes.html">Commandes</a>
-        <a href="windows.html" aria-current="page">Windows</a>
-        <a href="bios.html">BIOS / Boot</a>
+        <a href="home.html" data-en="Home">Accueil</a>
+        <a href="logiciels.html" data-en="Software">Logiciels</a>
+        <a href="processeurs.html" data-en="Processors">Processeurs</a>
+        <a href="commandes.html" data-en="Commands">Commandes</a>
+        <a href="windows.html" aria-current="page" data-en="Windows">Windows</a>
+        <a href="bios.html" data-en="BIOS / Boot">BIOS / Boot</a>
       </nav>
       <label class="search" id="site-search" data-search>
-        <input type="search" placeholder="Rechercher…" aria-label="Rechercher dans la documentation">
+        <input type="search" placeholder="Rechercher…" data-en-ph="Search…" aria-label="Rechercher dans la documentation">
       </label>
+      <button type="button" class="lang-button" data-lang-toggle aria-label="Changer de langue / Change language"></button>
     </div>
   </header>
   <main class="page">
     <div class="doc-inner">
       <div class="eyebrow">Windows · dépannage</div>
-      <h1>Menus Windows &amp; astuces technicien</h1>
-      <p class="lead">Accès rapides, environnements de récupération et petits raccourcis pour gagner du temps en intervention.</p>
+      <h1 data-en="Windows menus &amp; technician tips">Menus Windows &amp; astuces technicien</h1>
+      <p class="lead" data-en="Quick access, recovery environments and handy shortcuts to save time during interventions.">Accès rapides, environnements de récupération et petits raccourcis pour gagner du temps en intervention.</p>
       <div class="chips">
         <span class="chip"># WINRE</span>
         <span class="chip"># MSConfig</span>
         <span class="chip"># Raccourcis</span>
       </div>
-      <h2 data-search-group>Les menus de secours &amp; d’administration Windows</h2>
+      <h2 data-search-group data-en="Windows rescue &amp; administration menus">Les menus de secours &amp; d’administration Windows</h2>
       <div class="table-wrap" data-search-group>
         <table>
           <thead>
-            <tr><th>Raccourci / Outil</th><th>Usage</th></tr>
+            <tr><th data-en="Shortcut / Tool">Raccourci / Outil</th><th data-en="Use">Usage</th></tr>
           </thead>
           <tbody>
-            <tr data-search-item><td><code>Win + X</code></td><td>Menu rapide (Gestionnaire de tâches, Paramètres, Terminal, etc.)</td></tr>
-            <tr data-search-item><td><code>Win + R</code></td><td>Exécuter une commande</td></tr>
-            <tr data-search-item><td><code>msconfig</code></td><td>Démarrage sélectif, services, démarrage Windows</td></tr>
-            <tr data-search-item><td><code>regedit</code></td><td>Éditeur du Registre (précaution requise)</td></tr>
-            <tr data-search-item><td><code>services.msc</code></td><td>Services Windows</td></tr>
-            <tr data-search-item><td><code>diskmgmt.msc</code></td><td>Gestion des disques</td></tr>
-            <tr data-search-item><td><code>devmgmt.msc</code></td><td>Gestionnaire de périphériques</td></tr>
-            <tr data-search-item><td><code>compmgmt.msc</code></td><td>Gestion de l’ordinateur</td></tr>
+            <tr data-search-item><td><code>Win + X</code></td><td data-en="Quick menu (Task Manager, Settings, Terminal, etc.)">Menu rapide (Gestionnaire de tâches, Paramètres, Terminal, etc.)</td></tr>
+            <tr data-search-item><td><code>Win + R</code></td><td data-en="Run a command">Exécuter une commande</td></tr>
+            <tr data-search-item><td><code>msconfig</code></td><td data-en="Selective startup, services, Windows boot">Démarrage sélectif, services, démarrage Windows</td></tr>
+            <tr data-search-item><td><code>regedit</code></td><td data-en="Registry editor (use caution)">Éditeur du Registre (précaution requise)</td></tr>
+            <tr data-search-item><td><code>services.msc</code></td><td data-en="Windows services">Services Windows</td></tr>
+            <tr data-search-item><td><code>diskmgmt.msc</code></td><td data-en="Disk management">Gestion des disques</td></tr>
+            <tr data-search-item><td><code>devmgmt.msc</code></td><td data-en="Device manager">Gestionnaire de périphériques</td></tr>
+            <tr data-search-item><td><code>compmgmt.msc</code></td><td data-en="Computer management">Gestion de l’ordinateur</td></tr>
           </tbody>
         </table>
       </div>
-      <h2 data-search-group>Petits tips de technicien</h2>
+      <h2 data-search-group data-en="Technician tips">Petits tips de technicien</h2>
       <ul data-search-group>
-        <li data-search-item><strong>Mode sans échec</strong> : <code>msconfig</code> &gt; Démarrage &gt; Démarrage sécurisé, ou depuis WinRE &gt; Options avancées.</li>
-        <li data-search-item><strong>Point de restauration</strong> : Vérifier avant interventions lourdes si activé.</li>
-        <li data-search-item><strong>Historique des fichiers</strong> / Sauvegarde : Toujours vérifier l’existence d’une sauvegarde avant clonage/récupération.</li>
-        <li data-search-item><strong>Chiffrement BitLocker</strong> : Demander la clé de récupération avant toute action sur disque.</li>
+        <li data-search-item data-en-html="<strong>Safe mode</strong>: <code>msconfig</code> &gt; Boot &gt; Safe boot, or from WinRE &gt; Advanced options."><strong>Mode sans échec</strong> : <code>msconfig</code> &gt; Démarrage &gt; Démarrage sécurisé, ou depuis WinRE &gt; Options avancées.</li>
+        <li data-search-item data-en-html="<strong>Restore point</strong>: check it is enabled before heavy interventions."><strong>Point de restauration</strong> : Vérifier avant interventions lourdes si activé.</li>
+        <li data-search-item data-en-html="<strong>File History</strong> / Backup: always verify a backup exists before cloning/recovery."><strong>Historique des fichiers</strong> / Sauvegarde : Toujours vérifier l’existence d’une sauvegarde avant clonage/récupération.</li>
+        <li data-search-item data-en-html="<strong>BitLocker encryption</strong>: ask for the recovery key before any disk action."><strong>Chiffrement BitLocker</strong> : Demander la clé de récupération avant toute action sur disque.</li>
       </ul>
-      <p class="callout info">
-        <strong>Sécurité</strong> — n’exécutez jamais d’outils d’accès/mot de passe sans autorisation écrite du propriétaire.
-      </p>
       <footer class="footer">
-        <span>//INFO · WINDOWS</span>
-        <a href="home.html">Retour à l'accueil</a>
+        <span data-en="//INFO · WINDOWS">//INFO · WINDOWS</span>
+        <a href="home.html" data-en="Back to home">Retour à l'accueil</a>
       </footer>
     </div>
   </main>

@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#0c1013">
   <meta name="description" content="//INFO : documentation informatique et boîte à outils technicien.">
   <title>//INFO — Accueil</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1&display=block">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,55 +20,58 @@
         </span>
       </a>
       <nav class="site-nav" aria-label="Navigation principale">
-        <a href="home.html" aria-current="page">Accueil</a>
-        <a href="index.html">Espace de travail</a>
+        <a href="home.html" aria-current="page" data-en="Home">Accueil</a>
+        <a href="index.html" data-en="Workspace">Espace de travail</a>
       </nav>
+      <button type="button" class="lang-button" data-lang-toggle aria-label="Changer de langue / Change language"></button>
     </div>
   </header>
   <main class="page">
     <div class="doc-inner">
       <section class="welcome" style="padding: clamp(24px, 5vw, 40px) 0;">
-        <div class="eyebrow">Espace de travail · technicien IT</div>
-        <h1>Bienvenue sur <span style="color:var(--green)">//INFO</span></h1>
-        <p class="lead">Ouvrez plusieurs documentations sans perdre votre contexte. L'espace de travail permet d'ouvrir des fiches dans des onglets et de les comparer côte à côte.</p>
+        <div class="eyebrow" data-en="Workspace · IT technician">Espace de travail · technicien IT</div>
+        <h1><span data-en="Welcome to">Bienvenue sur</span> <span style="color:var(--green)">//INFO</span></h1>
+        <p class="lead" data-en="Open several documentation sheets without losing your context. The workspace lets you open sheets in tabs and compare them side by side.">Ouvrez plusieurs documentations sans perdre votre contexte. L'espace de travail permet d'ouvrir des fiches dans des onglets et de les comparer côte à côte.</p>
         <div class="hero-actions">
           <a href="index.html" class="button">
             <span class="material-symbols-outlined" aria-hidden="true">workspaces</span>
-            Ouvrir l'espace de travail
+            <span data-en="Open the workspace">Ouvrir l'espace de travail</span>
           </a>
         </div>
         <div class="welcome-grid">
           <a href="index.html?open=tools" class="welcome-card">
-            <span class="card-label">BOÎTE À OUTILS</span>
-            <strong>Logiciels pour techniciens</strong>
-            <span>Diagnostic, sauvegarde, réseau et dépannage.</span>
+            <span class="card-label" data-en="TOOLBOX">BOÎTE À OUTILS</span>
+            <strong data-en="Software for technicians">Logiciels pour techniciens</strong>
+            <span data-en="Diagnostics, backup, network and repair.">Diagnostic, sauvegarde, réseau et dépannage.</span>
           </a>
           <a href="index.html?open=cpu" class="welcome-card">
-            <span class="card-label">MATÉRIEL</span>
-            <strong>Comprendre les processeurs</strong>
-            <span>Nomenclature AMD Ryzen et Intel Core.</span>
+            <span class="card-label" data-en="HARDWARE">MATÉRIEL</span>
+            <strong data-en="Understanding processors">Comprendre les processeurs</strong>
+            <span data-en="AMD Ryzen and Intel Core naming.">Nomenclature AMD Ryzen et Intel Core.</span>
           </a>
           <a href="index.html?open=commands" class="welcome-card">
             <span class="card-label">TERMINAL</span>
-            <strong>Commandes pratiques</strong>
-            <span>Windows, Linux et maintenance.</span>
+            <strong data-en="Practical commands">Commandes pratiques</strong>
+            <span data-en="Windows, Linux and maintenance.">Windows, Linux et maintenance.</span>
           </a>
           <a href="index.html?open=windows" class="welcome-card">
             <span class="card-label">WINDOWS</span>
-            <strong>Menus et raccourcis</strong>
-            <span>Accès rapides et outils de dépannage.</span>
+            <strong data-en="Menus and shortcuts">Menus et raccourcis</strong>
+            <span data-en="Quick access and repair tools.">Accès rapides et outils de dépannage.</span>
           </a>
           <a href="index.html?open=bios" class="welcome-card">
-            <span class="card-label">DÉMARRAGE</span>
-            <strong>Touches BIOS / UEFI</strong>
-            <span>Accès firmware et menus de démarrage.</span>
+            <span class="card-label" data-en="BOOT">DÉMARRAGE</span>
+            <strong data-en="BIOS / UEFI keys">Touches BIOS / UEFI</strong>
+            <span data-en="Firmware access and boot menus.">Accès firmware et menus de démarrage.</span>
           </a>
         </div>
         <p class="callout info">
-          <strong>Astuce</strong> — choisissez une rubrique dans le menu latéral de l'espace de travail pour commencer.
+          <strong data-en="Tip">Astuce</strong> — <span data-en="pick a section in the workspace side menu to get started.">choisissez une rubrique dans le menu latéral de l'espace de travail pour commencer.</span>
         </p>
       </section>
     </div>
   </main>
+  <script src="search-index.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

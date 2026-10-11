@@ -6,8 +6,9 @@
   <meta name="theme-color" content="#0c1013">
   <meta name="description" content="//INFO : documentation informatique et boîte à outils technicien, consultables en onglets.">
   <title>//INFO — Documentation informatique</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1&display=block">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
+  <script src="search-index.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body class="workspace-page">
@@ -28,16 +29,16 @@
       <div class="workspace-switch" role="tablist" aria-label="Type de ressources">
         <button type="button" class="active" id="mode-docs" data-mode="docs" role="tab" aria-selected="true">
           <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
-          Documentation
+          <span data-en="Documentation">Documentation</span>
         </button>
         <button type="button" id="mode-tools" data-mode="tools" role="tab" aria-selected="false">
           <span class="material-symbols-outlined" aria-hidden="true">build</span>
-          Outils
+          <span data-en="Tools">Outils</span>
         </button>
       </div>
       <label class="workspace-search">
         <span class="material-symbols-outlined" aria-hidden="true">search</span>
-        <input type="search" data-sidebar-search placeholder="Rechercher…" aria-label="Rechercher dans le menu">
+        <input type="search" data-sidebar-search placeholder="Rechercher…" data-en-ph="Search…" aria-label="Rechercher dans le menu">
       </label>
       <nav class="workspace-nav" data-workspace-nav aria-label="Fiches disponibles"></nav>
       <div class="sidebar-foot">
@@ -51,18 +52,18 @@
         <button type="button" class="mobile-menu" data-sidebar-open aria-label="Ouvrir le menu">
           <span class="material-symbols-outlined" aria-hidden="true">menu</span>
         </button>
-        <a class="mobile-brand" href="home.html">//INFO</a>
-        <div class="workspace-crumb">
-          <span>ESPACE DE TRAVAIL</span>
-          <span>/</span>
-          <strong data-current-label>ACCUEIL</strong>
-        </div>
-        <div class="workspace-actions">
-          <button type="button" class="split-button" data-split-toggle aria-label="Afficher deux panneaux côte à côte" aria-pressed="false" title="Afficher deux panneaux côte à côte">
-            <span class="material-symbols-outlined" aria-hidden="true">view_column_2</span>
-            <span>Côte à côte</span>
-          </button>
-        </div>
+        <a class="mobile-brand" href="home.html">//INFO</a>          <div class="workspace-crumb">
+            <span data-en="WORKSPACE">ESPACE DE TRAVAIL</span>
+            <span>/</span>
+            <strong data-current-label>ACCUEIL</strong>
+          </div>
+          <div class="workspace-actions">
+            <button type="button" class="lang-button" data-lang-toggle aria-label="Changer de langue / Change language"></button>
+            <button type="button" class="split-button" data-split-toggle aria-label="Afficher deux panneaux côte à côte" aria-pressed="false" title="Afficher deux panneaux côte à côte">
+              <span class="material-symbols-outlined" aria-hidden="true">view_column_2</span>
+              <span data-en="Side by side">Côte à côte</span>
+            </button>
+          </div>
       </header>
       <section class="workspace" data-workspace aria-label="Panneaux de documentation">
         <div class="pane" data-pane="0" aria-label="Panneau principal">
