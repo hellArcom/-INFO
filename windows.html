@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c1013">
+  <meta name="description" content="Menus de secours Windows, raccourcis et astuces technicien.">
+  <title>Menus Windows — //INFO</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1&display=block">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="home.html">
+        <span class="brand-mark">//</span>
+        <span>
+          <span class="brand-name">//INFO</span><br>
+          <span class="brand-sub">DOCUMENTATION INFORMATIQUE</span>
+        </span>
+      </a>
+      <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav">☰ Menu</button>
+      <button class="nav-toggle" data-search-toggle aria-expanded="false" aria-controls="site-search">⌕ Recherche</button>
+      <nav class="site-nav" id="site-nav" data-site-nav aria-label="Navigation principale">
+        <a href="home.html">Accueil</a>
+        <a href="logiciels.html">Logiciels</a>
+        <a href="processeurs.html">Processeurs</a>
+        <a href="commandes.html">Commandes</a>
+        <a href="windows.html" aria-current="page">Windows</a>
+        <a href="bios.html">BIOS / Boot</a>
+      </nav>
+      <label class="search" id="site-search" data-search>
+        <input type="search" placeholder="Rechercher…" aria-label="Rechercher dans la documentation">
+      </label>
+    </div>
+  </header>
+  <main class="page">
+    <div class="doc-inner">
+      <div class="eyebrow">Windows · dépannage</div>
+      <h1>Menus Windows &amp; astuces technicien</h1>
+      <p class="lead">Accès rapides, environnements de récupération et petits raccourcis pour gagner du temps en intervention.</p>
+      <div class="chips">
+        <span class="chip"># WINRE</span>
+        <span class="chip"># MSConfig</span>
+        <span class="chip"># Raccourcis</span>
+      </div>
+      <h2 data-search-group>Les menus de secours &amp; d’administration Windows</h2>
+      <div class="table-wrap" data-search-group>
+        <table>
+          <thead>
+            <tr><th>Raccourci / Outil</th><th>Usage</th></tr>
+          </thead>
+          <tbody>
+            <tr data-search-item><td><code>Win + X</code></td><td>Menu rapide (Gestionnaire de tâches, Paramètres, Terminal, etc.)</td></tr>
+            <tr data-search-item><td><code>Win + R</code></td><td>Exécuter une commande</td></tr>
+            <tr data-search-item><td><code>msconfig</code></td><td>Démarrage sélectif, services, démarrage Windows</td></tr>
+            <tr data-search-item><td><code>regedit</code></td><td>Éditeur du Registre (précaution requise)</td></tr>
+            <tr data-search-item><td><code>services.msc</code></td><td>Services Windows</td></tr>
+            <tr data-search-item><td><code>diskmgmt.msc</code></td><td>Gestion des disques</td></tr>
+            <tr data-search-item><td><code>devmgmt.msc</code></td><td>Gestionnaire de périphériques</td></tr>
+            <tr data-search-item><td><code>compmgmt.msc</code></td><td>Gestion de l’ordinateur</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h2 data-search-group>Petits tips de technicien</h2>
+      <ul data-search-group>
+        <li data-search-item><strong>Mode sans échec</strong> : <code>msconfig</code> &gt; Démarrage &gt; Démarrage sécurisé, ou depuis WinRE &gt; Options avancées.</li>
+        <li data-search-item><strong>Point de restauration</strong> : Vérifier avant interventions lourdes si activé.</li>
+        <li data-search-item><strong>Historique des fichiers</strong> / Sauvegarde : Toujours vérifier l’existence d’une sauvegarde avant clonage/récupération.</li>
+        <li data-search-item><strong>Chiffrement BitLocker</strong> : Demander la clé de récupération avant toute action sur disque.</li>
+      </ul>
+      <p class="callout info">
+        <strong>Sécurité</strong> — n’exécutez jamais d’outils d’accès/mot de passe sans autorisation écrite du propriétaire.
+      </p>
+      <footer class="footer">
+        <span>//INFO · WINDOWS</span>
+        <a href="home.html">Retour à l'accueil</a>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>

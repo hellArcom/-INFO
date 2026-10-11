@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c1013">
+  <meta name="description" content="Touches d'accès BIOS/UEFI, menus de démarrage et boot order.">
+  <title>BIOS / Boot Menu — //INFO</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1&display=block">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="home.html">
+        <span class="brand-mark">//</span>
+        <span>
+          <span class="brand-name">//INFO</span><br>
+          <span class="brand-sub">DOCUMENTATION INFORMATIQUE</span>
+        </span>
+      </a>
+      <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav">☰ Menu</button>
+      <button class="nav-toggle" data-search-toggle aria-expanded="false" aria-controls="site-search">⌕ Recherche</button>
+      <nav class="site-nav" id="site-nav" data-site-nav aria-label="Navigation principale">
+        <a href="home.html">Accueil</a>
+        <a href="logiciels.html">Logiciels</a>
+        <a href="processeurs.html">Processeurs</a>
+        <a href="commandes.html">Commandes</a>
+        <a href="windows.html">Windows</a>
+        <a href="bios.html" aria-current="page">BIOS / Boot</a>
+      </nav>
+      <label class="search" id="site-search" data-search>
+        <input type="search" placeholder="Rechercher…" aria-label="Rechercher dans la documentation">
+      </label>
+    </div>
+  </header>
+  <main class="page">
+    <div class="doc-inner">
+      <div class="eyebrow">Démarrage · firmware</div>
+      <h1>Touches BIOS / UEFI &amp; menus de démarrage</h1>
+      <p class="lead">Raccourcis pour accéder au BIOS/UEFI ou au boot menu selon les constructeurs. Toujours adapter au modèle exact.</p>
+      <div class="chips">
+        <span class="chip"># UEFI</span>
+        <span class="chip"># BOOT</span>
+        <span class="chip"># SECURE BOOT</span>
+      </div>
+      <h2 data-search-group>Accès au BIOS / UEFI (entrée firmware)</h2>
+      <div class="table-wrap" data-search-group>
+        <table>
+          <thead>
+            <tr><th>Constructeur</th><th>Touche(s)</th><th>Remarques</th></tr>
+          </thead>
+          <tbody>
+            <tr data-search-item><td>ASUS</td><td><code>Suppr</code> / <code>F2</code></td><td>Selon modèle desktop/portable</td></tr>
+            <tr data-search-item><td>MSI</td><td><code>Suppr</code></td><td>Souvent DEL pour le BIOS</td></tr>
+            <tr data-search-item><td>Gigabyte / AORUS</td><td><code>Suppr</code> / <code>F2</code></td><td>Varie selon cartes mères</td></tr>
+            <tr data-search-item><td>ASRock</td><td><code>Suppr</code> / <code>F2</code></td><td>Commun</td></tr>
+            <tr data-search-item><td>Lenovo (ThinkPad)</td><td><code>Enter</code> + <code>F1</code> / <code>Novo</code></td><td>Bouton Novo ou Fn+Enter selon modèle</td></tr>
+            <tr data-search-item><td>HP</td><td><code>Esc</code> / <code>F10</code></td><td>Pour accéder aux options</td></tr>
+            <tr data-search-item><td>Dell</td><td><code>F2</code></td><td>Setup BIOS/UEFI</td></tr>
+            <tr data-search-item><td>Acer</td><td><code>Suppr</code> / <code>F2</code></td><td>Selon série</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h2 data-search-group>Menu de démarrage (Boot Menu)</h2>
+      <div class="table-wrap" data-search-group>
+        <table>
+          <thead>
+            <tr><th>Constructeur</th><th>Touche</th></tr>
+          </thead>
+          <tbody>
+            <tr data-search-item><td>ASUS</td><td><code>Esc</code> / <code>F8</code></td></tr>
+            <tr data-search-item><td>MSI</td><td><code>F11</code></td></tr>
+            <tr data-search-item><td>Gigabyte</td><td><code>F12</code></td></tr>
+            <tr data-search-item><td>ASRock</td><td><code>F11</code></td></tr>
+            <tr data-search-item><td>Lenovo</td><td><code>F12</code> / <code>Novo</code></td></tr>
+            <tr data-search-item><td>HP</td><td><code>F9</code></td></tr>
+            <tr data-search-item><td>Dell</td><td><code>F12</code></td></tr>
+            <tr data-search-item><td>Acer</td><td><code>F12</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h2 data-search-group>Vérifications rapides</h2>
+      <ul data-search-group>
+        <li data-search-item><strong>Boot Order</strong> : vérifier l’ordre de démarrage (USB/SSD/HDD).</li>
+        <li data-search-item><strong>Secure Boot</strong> : peut bloquer certains Live USB non signés.</li>
+        <li data-search-item><strong>CSM / Legacy</strong> : à activer uniquement si nécessaire pour vieux supports.</li>
+        <li data-search-item><strong>UEFI vs Legacy</strong> : privilégier UEFI si Windows 10/11 installé en UEFI.</li>
+      </ul>
+      <p class="callout info">
+        <strong>Astuce</strong> — si le PC démarre trop vite, utiliser WinRE ou redémarrer en maintenant <code>Shift</code> + Redémarrer pour accéder aux options avancées.
+      </p>
+      <footer class="footer">
+        <span>//INFO · BIOS / BOOT</span>
+        <a href="home.html">Retour à l'accueil</a>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>

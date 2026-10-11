@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c1013">
+  <meta name="description" content="Nomenclature des processeurs AMD Ryzen et Intel Core.">
+  <title>Processeurs — //INFO</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1&display=block">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="home.html">
+        <span class="brand-mark">//</span>
+        <span>
+          <span class="brand-name">//INFO</span><br>
+          <span class="brand-sub">DOCUMENTATION INFORMATIQUE</span>
+        </span>
+      </a>
+      <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav">☰ Menu</button>
+      <button class="nav-toggle" data-search-toggle aria-expanded="false" aria-controls="site-search">⌕ Recherche</button>
+      <nav class="site-nav" id="site-nav" data-site-nav aria-label="Navigation principale">
+        <a href="home.html">Accueil</a>
+        <a href="logiciels.html">Logiciels</a>
+        <a href="processeurs.html" aria-current="page">Processeurs</a>
+        <a href="commandes.html">Commandes</a>
+        <a href="windows.html">Windows</a>
+        <a href="bios.html">BIOS / Boot</a>
+      </nav>
+      <label class="search" id="site-search" data-search>
+        <input type="search" placeholder="Rechercher…" aria-label="Rechercher dans la documentation">
+      </label>
+    </div>
+  </header>
+  <main class="page">
+    <div class="doc-inner">
+      <div class="eyebrow">Matériel · processeurs</div>
+      <h1>Nomenclature des processeurs</h1>
+      <p class="lead">Guide rapide pour décoder les références AMD Ryzen et Intel Core. Repérer génération, puissance et suffixes permet d’orienter un choix ou un diagnostic.</p>
+      <div class="chips">
+        <span class="chip"># CPU</span>
+        <span class="chip"># AMD</span>
+        <span class="chip"># INTEL</span>
+      </div>
+      <h2 data-search-group>AMD Ryzen (bureau &amp; portable)</h2>
+      <div class="table-wrap" data-search-group>
+        <table>
+          <thead>
+            <tr><th>Élément</th><th>Exemple</th><th>Signification</th></tr>
+          </thead>
+          <tbody>
+            <tr data-search-item><td>Gamme</td><td>Ryzen 3 / 5 / 7 / 9</td><td>Niveau de performance global</td></tr>
+            <tr data-search-item><td>Génération</td><td>7xxx (ex. 7000)</td><td>Architecture et génération</td></tr>
+            <tr data-search-item><td>Modèle</td><td>xx80x</td><td>Indique la puissance dans la gamme</td></tr>
+            <tr data-search-item><td>X</td><td>Ryzen 7 7800X</td><td>Modèle boosté</td></tr>
+            <tr data-search-item><td>X3D</td><td>7800X3D / 7950X3D</td><td>Cache 3D V-Cache, très performant en jeu</td></tr>
+            <tr data-search-item><td>G</td><td>5600G / 7840HS G ?</td><td>Graphique intégré performant</td></tr>
+            <tr data-search-item><td>F</td><td>5600F / 7700F</td><td>Sans puce graphique intégrée</td></tr>
+            <tr data-search-item><td>HS / HX</td><td>7945HX</td><td>Haute performance (PC portable)</td></tr>
+            <tr data-search-item><td>U</td><td>7730U</td><td>Basse consommation (PC portable)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h2 data-search-group>Intel Core (bureau &amp; portable)</h2>
+      <div class="table-wrap" data-search-group>
+        <table>
+          <thead>
+            <tr><th>Élément</th><th>Exemple</th><th>Signification</th></tr>
+          </thead>
+          <tbody>
+            <tr data-search-item><td>Gamme</td><td>i3 / i5 / i7 / i9</td><td>Niveau de performance</td></tr>
+            <tr data-search-item><td>Génération</td><td>14xxx (ex. 14e gen)</td><td>Génération du processeur</td></tr>
+            <tr data-search-item><td>Modèle</td><td>xx70</td><td>Puissance au sein de la génération</td></tr>
+            <tr data-search-item><td>K</td><td>14700K</td><td>Overclocking débloqué</td></tr>
+            <tr data-search-item><td>F</td><td>14400F</td><td>Sans puce graphique intégrée</td></tr>
+            <tr data-search-item><td>KF</td><td>13700KF</td><td>K + F combinés</td></tr>
+            <tr data-search-item><td>KS</td><td>14900KS</td><td>Édition spéciale ultra-rapide</td></tr>
+            <tr data-search-item><td>T</td><td>12400T</td><td>Basse consommation (PC fixe)</td></tr>
+            <tr data-search-item><td>H / HX</td><td>13900HX</td><td>Haute performance (PC portable)</td></tr>
+            <tr data-search-item><td>U</td><td>1365U</td><td>Basse consommation (PC portable)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="callout info">
+        <strong>Remarque</strong> — ces règles couvrent les générations récentes. Toujours vérifier la fiche produit officielle pour confirmer.
+      </p>
+      <footer class="footer">
+        <span>//INFO · PROCESSEURS</span>
+        <a href="home.html">Retour à l'accueil</a>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>

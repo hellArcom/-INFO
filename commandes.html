@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c1013">
+  <meta name="description" content="Commandes Windows, Linux et utilitaires pour le diagnostic et la maintenance.">
+  <title>Commandes pratiques — //INFO</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1&display=block">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="home.html">
+        <span class="brand-mark">//</span>
+        <span>
+          <span class="brand-name">//INFO</span><br>
+          <span class="brand-sub">DOCUMENTATION INFORMATIQUE</span>
+        </span>
+      </a>
+      <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav">☰ Menu</button>
+      <button class="nav-toggle" data-search-toggle aria-expanded="false" aria-controls="site-search">⌕ Recherche</button>
+      <nav class="site-nav" id="site-nav" data-site-nav aria-label="Navigation principale">
+        <a href="home.html">Accueil</a>
+        <a href="logiciels.html">Logiciels</a>
+        <a href="processeurs.html">Processeurs</a>
+        <a href="commandes.html" aria-current="page">Commandes</a>
+        <a href="windows.html">Windows</a>
+        <a href="bios.html">BIOS / Boot</a>
+      </nav>
+      <label class="search" id="site-search" data-search>
+        <input type="search" placeholder="Rechercher une commande…" aria-label="Rechercher une commande">
+      </label>
+    </div>
+  </header>
+  <main class="page">
+    <div class="doc-inner">
+      <div class="eyebrow">Terminal · commandes</div>
+      <h1>Commandes pratiques</h1>
+      <p class="lead">Référentiel de commandes utiles pour le technicien : réparation, diagnostic, maintenance Windows et Linux.</p>
+      <div class="chips">
+        <span class="chip"># CMD</span>
+        <span class="chip"># POWERSHELL</span>
+        <span class="chip"># SHELL</span>
+      </div>
+      <h2 data-search-group>Commandes Windows (réparation &amp; diagnostic)</h2>
+      <div class="table-wrap" data-search-group>
+        <table>
+          <thead>
+            <tr><th>Commande</th><th>Usage</th></tr>
+          </thead>
+          <tbody>
+            <tr data-search-item><td><code>sfc /scannow</code></td><td>Vérifie et restaure les fichiers système Windows.</td></tr>
+            <tr data-search-item><td><code>DISM /Online /Cleanup-Image /RestoreHealth</code></td><td>Répare l’image système Windows.</td></tr>
+            <tr data-search-item><td><code>chkdsk C: /f /r</code></td><td>Vérifie et corrige les erreurs du disque.</td></tr>
+            <tr data-search-item><td><code>systeminfo</code></td><td>Affiche la configuration système complète.</td></tr>
+            <tr data-search-item><td><code>msconfig</code></td><td>Configuration du démarrage et des services.</td></tr>
+            <tr data-search-item><td><code>msinfo32</code></td><td>Informations matérielles et logicielles détaillées.</td></tr>
+            <tr data-search-item><td><code>dxdiag</code></td><td>Diagnostic DirectX (graphique/audio).</td></tr>
+            <tr data-search-item><td><code>eventvwr.msc</code></td><td>Observateur d’événements Windows.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h2 data-search-group>Commandes Linux (équivalents &amp; maintenance)</h2>
+      <div class="table-wrap" data-search-group>
+        <table>
+          <thead>
+            <tr><th>Commande</th><th>Usage</th></tr>
+          </thead>
+          <tbody>
+            <tr data-search-item><td><code>lsblk</code></td><td>Liste des disques et partitions.</td></tr>
+            <tr data-search-item><td><code>df -h</code></td><td>Espace disque disponible/utilisé.</td></tr>
+            <tr data-search-item><td><code>free -h</code></td><td>Mémoire vive et swap.</td></tr>
+            <tr data-search-item><td><code>lscpu</code></td><td>Informations CPU.</td></tr>
+            <tr data-search-item><td><code>uname -a</code></td><td>Version du noyau et architecture.</td></tr>
+            <tr data-search-item><td><code>journalctl -b</code></td><td>Journal du démarrage courant.</td></tr>
+            <tr data-search-item><td><code>sudo apt update &amp;&amp; sudo apt upgrade</code></td><td>Mise à jour paquets (Debian/Ubuntu).</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h2 data-search-group>Commandes utilitaires &amp; pratiques</h2>
+      <div class="table-wrap" data-search-group>
+        <table>
+          <thead>
+            <tr><th>Commande</th><th>Usage</th></tr>
+          </thead>
+          <tbody>
+            <tr data-search-item><td><code>ipconfig /all</code></td><td>Configuration réseau Windows complète.</td></tr>
+            <tr data-search-item><td><code>ping 8.8.8.8</code></td><td>Test de connectivité Internet.</td></tr>
+            <tr data-search-item><td><code>tracert 8.8.8.8</code> / <code>traceroute</code></td><td>Chemin suivi vers une destination.</td></tr>
+            <tr data-search-item><td><code>nslookup</code></td><td>Résolution DNS.</td></tr>
+            <tr data-search-item><td><code>netstat -ano</code></td><td>Connexions réseau et processus.</td></tr>
+            <tr data-search-item><td><code>shutdown /r /t 0</code></td><td>Redémarrer immédiatement.</td></tr>
+            <tr data-search-item><td><code>shutdown /s /t 60</code></td><td>Éteindre avec délai.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <footer class="footer">
+        <span>//INFO · COMMANDES</span>
+        <a href="home.html">Retour à l'accueil</a>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>

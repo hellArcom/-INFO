@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c1013">
+  <meta name="description" content="//INFO : documentation informatique et boîte à outils technicien, consultables en onglets.">
+  <title>//INFO — Documentation informatique</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1&display=block">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="workspace-page">
+  <div class="workspace-shell">
+    <aside class="workspace-sidebar" id="workspace-sidebar" aria-label="Navigation //INFO">
+      <div class="workspace-brand">
+        <a class="brand" href="home.html">
+          <span class="brand-mark">//</span>
+          <span>
+            <span class="brand-name">//INFO</span><br>
+            <span class="brand-sub">BASE TECHNICIENNE</span>
+          </span>
+        </a>
+        <button class="sidebar-close" type="button" data-sidebar-close aria-label="Fermer le menu">
+          <span class="material-symbols-outlined" aria-hidden="true">close</span>
+        </button>
+      </div>
+      <div class="workspace-switch" role="tablist" aria-label="Type de ressources">
+        <button type="button" class="active" id="mode-docs" data-mode="docs" role="tab" aria-selected="true">
+          <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+          Documentation
+        </button>
+        <button type="button" id="mode-tools" data-mode="tools" role="tab" aria-selected="false">
+          <span class="material-symbols-outlined" aria-hidden="true">build</span>
+          Outils
+        </button>
+      </div>
+      <label class="workspace-search">
+        <span class="material-symbols-outlined" aria-hidden="true">search</span>
+        <input type="search" data-sidebar-search placeholder="Rechercher…" aria-label="Rechercher dans le menu">
+      </label>
+      <nav class="workspace-nav" data-workspace-nav aria-label="Fiches disponibles"></nav>
+      <div class="sidebar-foot">
+        <span class="status-dot"></span>
+        BASE LOCALE · //INFO
+      </div>
+    </aside>
+    <div class="sidebar-scrim" data-sidebar-close></div>
+    <main class="workspace-main">
+      <header class="workspace-topbar">
+        <button type="button" class="mobile-menu" data-sidebar-open aria-label="Ouvrir le menu">
+          <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+        </button>
+        <a class="mobile-brand" href="home.html">//INFO</a>
+        <div class="workspace-crumb">
+          <span>ESPACE DE TRAVAIL</span>
+          <span>/</span>
+          <strong data-current-label>ACCUEIL</strong>
+        </div>
+        <div class="workspace-actions">
+          <button type="button" class="split-button" data-split-toggle aria-label="Afficher deux panneaux côte à côte" aria-pressed="false" title="Afficher deux panneaux côte à côte">
+            <span class="material-symbols-outlined" aria-hidden="true">view_column_2</span>
+            <span>Côte à côte</span>
+          </button>
+        </div>
+      </header>
+      <section class="workspace" data-workspace aria-label="Panneaux de documentation">
+        <div class="pane" data-pane="0" aria-label="Panneau principal">
+          <div class="tab-strip" data-tabs="0" role="tablist" aria-label="Onglets du panneau principal"></div>
+          <div class="pane-body" data-pane-body="0">
+            <div class="pane-empty">Choisissez une fiche dans le menu pour l’ouvrir ici.</div>
+          </div>
+        </div>
+        <div class="pane pane-secondary" data-pane="1" aria-label="Panneau secondaire" hidden>
+          <div class="tab-strip" data-tabs="1" role="tablist" aria-label="Onglets du panneau secondaire"></div>
+          <div class="pane-body" data-pane-body="1">
+            <div class="pane-empty">Ouvrez une fiche ici pour la comparer à l’autre panneau.</div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c1013">
+  <meta name="description" content="Boîte à outils gratuite pour technicien informatique : dépannage, diagnostic, réseau et sauvegarde.">
+  <title>Logiciels technicien — //INFO</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1&display=block">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="home.html">
+        <span class="brand-mark">//</span>
+        <span>
+          <span class="brand-name">//INFO</span><br>
+          <span class="brand-sub">DOCUMENTATION INFORMATIQUE</span>
+        </span>
+      </a>
+      <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav">☰ Menu</button>
+      <button class="nav-toggle" data-search-toggle aria-expanded="false" aria-controls="site-search">⌕ Recherche</button>
+      <nav class="site-nav" id="site-nav" data-site-nav aria-label="Navigation principale">
+        <a href="home.html">Accueil</a>
+        <a href="logiciels.html" aria-current="page">Logiciels</a>
+        <a href="processeurs.html">Processeurs</a>
+        <a href="commandes.html">Commandes</a>
+        <a href="windows.html">Windows</a>
+        <a href="bios.html">BIOS / Boot</a>
+      </nav>
+      <label class="search" id="site-search" data-search>
+        <input type="search" placeholder="Rechercher un logiciel…" aria-label="Rechercher un logiciel">
+      </label>
+    </div>
+  </header>
+  <main class="page">
+    <div class="doc-inner">
+      <div class="eyebrow">Boîte à outils · logiciels</div>
+      <h1>Outils</h1>
+      <p class="lead">Sélection de logiciels gratuits, libres ou disposant d’une version gratuite pour préparer des supports, diagnostiquer et dépanner un ordinateur. Les liens mènent aux éditeurs ou projets officiels.</p>
+      <div class="chips">
+        <span class="chip"># OUTILS</span>
+        <span class="chip"># DIAGNOSTIC</span>
+        <span class="chip"># SOURCES OFFICIELLES</span>
+      </div>
+      <h2 id="environnements-bootables" data-search-group>Environnements bootables et clés USB</h2>
+      <div class="table-wrap" data-search-group>
+        <table>
+          <thead>
+            <tr><th>Logiciel</th><th>Licence</th><th>Usage principal</th><th>Site officiel</th></tr>
+          </thead>
+          <tbody>
+            <tr data-search-item><td>Ventoy</td><td>Open source</td><td>Créer une clé USB multiboot à partir d’images ISO.</td><td><a href="https://www.ventoy.net/" target="_blank" rel="noopener noreferrer">ventoy.net</a></td></tr>
+            <tr data-search-item><td>MediCat</td><td>Gratuit</td><td>Environnement de secours tout-en-un (WinPE).</td><td><a href="https://medicatusb.com/" target="_blank" rel="noopener noreferrer">medicatusb.com</a></td></tr>
+            <tr data-search-item><td>Rescuezilla</td><td>Open source</td><td>Sauvegarde et clonage de disque en Live USB.</td><td><a href="https://rescuezilla.com/" target="_blank" rel="noopener noreferrer">rescuezilla.com</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h2 id="diagnostic-materiel" data-search-group>Diagnostic et stabilité matérielle</h2>
+      <div class="table-wrap" data-search-group>
+        <table>
+          <thead>
+            <tr><th>Logiciel</th><th>Licence</th><th>Usage principal</th><th>Site officiel</th></tr>
+          </thead>
+          <tbody>
+            <tr data-search-item><td>OCCT</td><td>Gratuit (usage personnel)</td><td>Tests de charge CPU, GPU, mémoire et alimentation.</td><td><a href="https://www.occtbase.com/" target="_blank" rel="noopener noreferrer">occtbase.com</a></td></tr>
+            <tr data-search-item><td>HWMonitor</td><td>Gratuit</td><td>Surveillance des températures et tensions.</td><td><a href="https://www.cpuid.com/softwares/hwmonitor.html" target="_blank" rel="noopener noreferrer">cpuid.com</a></td></tr>
+            <tr data-search-item><td>CPU-Z &amp; GPU-Z</td><td>Gratuit</td><td>Identification des composants et de leurs fréquences.</td><td><a href="https://www.cpuid.com/" target="_blank" rel="noopener noreferrer">cpuid.com</a></td></tr>
+            <tr data-search-item><td>CrystalDiskInfo</td><td>Gratuit</td><td>Consultation de l’état SMART des disques.</td><td><a href="https://crystalmark.info/en/software/crystaldiskinfo/" target="_blank" rel="noopener noreferrer">crystalmark.info</a></td></tr>
+            <tr data-search-item><td>Keyboard Tester</td><td>Gratuit</td><td>Tester le fonctionnement des touches du clavier.</td><td><a href="https://www.passmark.com/products/keyboardtest/" target="_blank" rel="noopener noreferrer">passmark.com</a></td></tr>
+            <tr data-search-item><td>Dead Pixel Locator</td><td>Gratuit</td><td>Rechercher les pixels morts ou bloqués.</td><td><a href="https://www.displaytester.com/dead_pixel_test_fr.html" target="_blank" rel="noopener noreferrer">displaytester.com</a></td></tr>
+            <tr data-search-item><td>MemTest86+</td><td>Open source</td><td>Test de fiabilité de la mémoire au démarrage.</td><td><a href="https://www.memtest.org/" target="_blank" rel="noopener noreferrer">memtest.org</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h2 id="nettoyage-securite" data-search-group>Nettoyage, désinfection et optimisation</h2>
+      <div class="table-wrap" data-search-group>
+        <table>
+          <thead>
+            <tr><th>Logiciel</th><th>Licence</th><th>Usage principal</th><th>Site officiel</th></tr>
+          </thead>
+          <tbody>
+            <tr data-search-item><td>BleachBit</td><td>Open source</td><td>Nettoyage de fichiers temporaires et caches.</td><td><a href="https://www.bleachbit.org/" target="_blank" rel="noopener noreferrer">bleachbit.org</a></td></tr>
+            <tr data-search-item><td>Revo Uninstaller</td><td>Gratuit (version limitée)</td><td>Désinstallation et suppression des restes de programmes.</td><td><a href="https://www.revouninstaller.com/" target="_blank" rel="noopener noreferrer">revouninstaller.com</a></td></tr>
+            <tr data-search-item><td>BCUninstaller</td><td>Open source</td><td>Désinstallation par lots de logiciels et bloatwares.</td><td><a href="https://www.bcuninstaller.com/" target="_blank" rel="noopener noreferrer">bcuninstaller.com</a></td></tr>
+            <tr data-search-item><td>AdwCleaner</td><td>Gratuit</td><td>Détection et suppression d’adwares et PUPs.</td><td><a href="https://www.malwarebytes.com/adwcleaner" target="_blank" rel="noopener noreferrer">malwarebytes.com</a></td></tr>
+            <tr data-search-item><td>Malwarebytes Free</td><td>Gratuit</td><td>Analyse et suppression de logiciels malveillants.</td><td><a href="https://www.malwarebytes.com/" target="_blank" rel="noopener noreferrer">malwarebytes.com</a></td></tr>
+            <tr data-search-item><td>O&amp;O ShutUp10++</td><td>Gratuit</td><td>Gestion de paramètres de confidentialité Windows 10/11.</td><td><a href="https://www.oo-software.com/en/shutup10" target="_blank" rel="noopener noreferrer">oo-software.com</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h2 id="systeme-recherche" data-search-group>Recherche, système et registre</h2>
+      <div class="table-wrap" data-search-group>
+        <table>
+          <thead>
+            <tr><th>Logiciel</th><th>Licence</th><th>Usage principal</th><th>Site officiel</th></tr>
+          </thead>
+          <tbody>
+            <tr data-search-item><td>Filelight</td><td>Open source</td><td>Visualiser graphiquement l’espace disque occupé.</td><td><a href="https://apps.kde.org/filelight/" target="_blank" rel="noopener noreferrer">apps.kde.org</a></td></tr>
+            <tr data-search-item><td>Everything</td><td>Gratuit</td><td>Recherche instantanée de fichiers sous Windows.</td><td><a href="https://www.voidtools.com/" target="_blank" rel="noopener noreferrer">voidtools.com</a></td></tr>
+            <tr data-search-item><td>System Informer</td><td>Open source</td><td>Gestionnaire avancé de processus Windows.</td><td><a href="https://systeminformer.com/" target="_blank" rel="noopener noreferrer">systeminformer.com</a></td></tr>
+            <tr data-search-item><td>LockHunter</td><td>Gratuit</td><td>Identifier les processus qui verrouillent un fichier.</td><td><a href="https://lockhunter.com/" target="_blank" rel="noopener noreferrer">lockhunter.com</a></td></tr>
+            <tr data-search-item><td>TrID</td><td>Gratuit</td><td>Identifier le type d’un fichier sans extension.</td><td><a href="https://mark0.net/soft-trid-e.html" target="_blank" rel="noopener noreferrer">mark0.net</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h2 id="pilotes-reseau" data-search-group>Drivers et réseau</h2>
+      <div class="table-wrap" data-search-group>
+        <table>
+          <thead>
+            <tr><th>Logiciel</th><th>Licence</th><th>Usage principal</th><th>Site officiel</th></tr>
+          </thead>
+          <tbody>
+            <tr data-search-item><td>Display Driver Uninstaller (DDU)</td><td>Gratuit</td><td>Nettoyage des pilotes graphiques.</td><td><a href="https://www.wagnardsoft.com/" target="_blank" rel="noopener noreferrer">wagnardsoft.com</a></td></tr>
+            <tr data-search-item><td>Snappy Driver Installer Origin</td><td>Open source</td><td>Installation de pilotes, y compris hors ligne.</td><td><a href="https://sdi-tool.org/" target="_blank" rel="noopener noreferrer">sdi-tool.org</a></td></tr>
+            <tr data-search-item><td>Advanced IP Scanner</td><td>Gratuit</td><td>Analyse du réseau local.</td><td><a href="https://www.advanced-ip-scanner.com/" target="_blank" rel="noopener noreferrer">advanced-ip-scanner.com</a></td></tr>
+            <tr data-search-item><td>Nmap / Zenmap</td><td>Open source</td><td>Analyse de ports et audit réseau autorisé.</td><td><a href="https://nmap.org/" target="_blank" rel="noopener noreferrer">nmap.org</a></td></tr>
+            <tr data-search-item><td>NetSpot / Wi-Fi Commander</td><td>Gratuit (versions limitées)</td><td>Analyse et cartographie du signal Wi-Fi.</td><td><a href="https://www.netspotapp.com/" target="_blank" rel="noopener noreferrer">netspotapp.com</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h2 id="acces-restauration" data-search-group>Mots de passe et restauration</h2>
+      <div class="table-wrap" data-search-group>
+        <table>
+          <thead>
+            <tr><th>Logiciel</th><th>Licence</th><th>Usage principal</th><th>Site officiel</th></tr>
+          </thead>
+          <tbody>
+            <tr data-search-item><td>Reset Windows Password</td><td>Payant / selon édition</td><td>Récupération d’accès Windows ; à utiliser uniquement avec autorisation.</td><td><a href="https://www.top-password.com/reset-windows-password.html" target="_blank" rel="noopener noreferrer">top-password.com</a></td></tr>
+            <tr data-search-item><td>chntpw / NTPWEdit</td><td>Open source / gratuit</td><td>Outils hors ligne autour des comptes Windows : n’utiliser que sur un appareil autorisé.</td><td><a href="https://github.com/npe-editing/ntpwedit" target="_blank" rel="noopener noreferrer">projet chntpw</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h2 id="sauvegarde-recuperation" data-search-group>Sauvegarde, clonage et récupération</h2>
+      <div class="table-wrap" data-search-group>
+        <table>
+          <thead>
+            <tr><th>Logiciel</th><th>Licence</th><th>Usage principal</th><th>Site officiel</th></tr>
+          </thead>
+          <tbody>
+            <tr data-search-item><td>Clonezilla</td><td>Open source</td><td>Clonage et imagerie de disque.</td><td><a href="https://clonezilla.org/" target="_blank" rel="noopener noreferrer">clonezilla.org</a></td></tr>
+            <tr data-search-item><td>TestDisk &amp; PhotoRec</td><td>Open source</td><td>Récupération de partitions et de fichiers supprimés.</td><td><a href="https://www.cgsecurity.org/" target="_blank" rel="noopener noreferrer">cgsecurity.org</a></td></tr>
+            <tr data-search-item><td>FastCopy</td><td>Gratuit / open source</td><td>Copie rapide de données sous Windows.</td><td><a href="https://fastcopy.jp/" target="_blank" rel="noopener noreferrer">fastcopy.jp</a></td></tr>
+            <tr data-search-item><td>Kopia / Duplicati</td><td>Open source</td><td>Sauvegardes chiffrées et incrémentielles.</td><td><a href="https://kopia.io/" target="_blank" rel="noopener noreferrer">kopia.io</a> · <a href="https://www.duplicati.com/" target="_blank" rel="noopener noreferrer">duplicati.com</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h2 id="teleassistance" data-search-group>Réseau et téléassistance</h2>
+      <div class="table-wrap" data-search-group>
+        <table>
+          <thead>
+            <tr><th>Logiciel</th><th>Licence</th><th>Usage principal</th><th>Site officiel</th></tr>
+          </thead>
+          <tbody>
+            <tr data-search-item><td>RustDesk</td><td>Open source</td><td>Prise en main à distance.</td><td><a href="https://rustdesk.com/" target="_blank" rel="noopener noreferrer">rustdesk.com</a></td></tr>
+            <tr data-search-item><td>AnyDesk</td><td>Gratuit (usage personnel)</td><td>Logiciel de téléassistance à distance.</td><td><a href="https://anydesk.com/" target="_blank" rel="noopener noreferrer">anydesk.com</a></td></tr>
+            <tr data-search-item><td>AnyViewer</td><td>Gratuit (version personnelle)</td><td>Logiciel de téléassistance.</td><td><a href="https://www.anyviewer.com/" target="_blank" rel="noopener noreferrer">anyviewer.com</a></td></tr>
+            <tr data-search-item><td>Firefox Portable</td><td>Open source</td><td>Navigateur autonome pour support USB.</td><td><a href="https://portableapps.com/apps/internet/firefox_portable" target="_blank" rel="noopener noreferrer">portableapps.com</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h2 id="bureautique-utilitaires" data-search-group>Archives, automatisation et bureautique</h2>
+      <div class="table-wrap" data-search-group>
+        <table>
+          <thead>
+            <tr><th>Logiciel</th><th>Licence</th><th>Usage principal</th><th>Site officiel</th></tr>
+          </thead>
+          <tbody>
+            <tr data-search-item><td>7-Zip</td><td>Open source</td><td>Gestionnaire d’archives.</td><td><a href="https://www.7-zip.org/" target="_blank" rel="noopener noreferrer">7-zip.org</a></td></tr>
+            <tr data-search-item><td>Ninite</td><td>Gratuit</td><td>Installation automatisée de logiciels Windows.</td><td><a href="https://ninite.com/" target="_blank" rel="noopener noreferrer">ninite.com</a></td></tr>
+            <tr data-search-item><td>WinGet</td><td>Gratuit / intégré à Windows</td><td>Gestionnaire de paquets Windows.</td><td><a href="https://learn.microsoft.com/windows/package-manager/winget/" target="_blank" rel="noopener noreferrer">Microsoft Learn</a></td></tr>
+            <tr data-search-item><td>Sumatra PDF</td><td>Open source</td><td>Lecteur PDF léger.</td><td><a href="https://www.sumatrapdfreader.org/" target="_blank" rel="noopener noreferrer">sumatrapdfreader.org</a></td></tr>
+            <tr data-search-item><td>LibreOffice</td><td>Open source</td><td>Suite bureautique libre.</td><td><a href="https://www.libreoffice.org/" target="_blank" rel="noopener noreferrer">libreoffice.org</a></td></tr>
+            <tr data-search-item><td>Rufus</td><td>Open source</td><td>Création de clés USB bootables Windows et Linux.</td><td><a href="https://rufus.ie/" target="_blank" rel="noopener noreferrer">rufus.ie</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p data-empty-search hidden class="callout info">Aucun résultat ne correspond à cette recherche.</p>
+      <p class="callout">
+        <strong>Prudence</strong> — télécharger depuis la source officielle. Les outils de clonage, partitionnement, effacement ou accès distant doivent être utilisés avec l’accord du propriétaire et une sauvegarde vérifiée.
+      </p>
+      <footer class="footer">
+        <span>//INFO · BOÎTE À OUTILS</span>
+        <a href="home.html">Retour à l'accueil</a>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>
