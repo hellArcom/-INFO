@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c1013">
+  <meta name="robots" content="noindex">
+  <title>404 — //INFO</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .nf-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 20px 72px;
+      text-align: center;
+    }
+    .nf-code {
+      font: 700 clamp(64px, 16vw, 140px)/1 var(--mono);
+      color: var(--green);
+      letter-spacing: -0.05em;
+      text-shadow: 0 0 30px #96e6a033;
+    }
+    .nf-sub {
+      color: var(--muted);
+      font: 13px var(--mono);
+      margin-top: 6px;
+    }
+    .nf-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 22px 0 8px;
+    }
+    .nf-game {
+      margin-top: 26px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--panel);
+      padding: 16px;
+    }
+    .nf-game-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font: 11px var(--mono);
+      color: var(--muted);
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .nf-stats {
+      display: flex;
+      gap: 16px;
+    }
+    .nf-stats b { color: var(--green); font-weight: 600; }
+    #nf-canvas {
+      width: 100%;
+      height: 340px;
+      display: block;
+      border-radius: 8px;
+      background: #080b0e;
+      border: 1px solid var(--line);
+      touch-action: none;
+    }
+    .nf-overlay {
+      position: relative;
+    }
+    .nf-start {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      background: #080b0ecc;
+      border-radius: 8px;
+      color: var(--text);
+      font: 13px var(--mono);
+      cursor: pointer;
+      gap: 6px;
+      text-align: center;
+      padding: 20px;
+    }
+    .nf-start small { color: var(--muted); }
+  </style>
+  <script src="search-index.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="nf-wrap">
+    <div class="eyebrow">Erreur 404</div>
+    <div class="nf-code">404</div>
+    <p class="nf-sub" data-en="Page not found on //INFO.">Page introuvable sur //INFO.</p>
+    <div class="nf-actions">
+      <a href="home.html" class="button"><span data-en="Back to home">Retour à l'accueil</span></a>
+      <a href="index.html" class="button secondary"><span data-en="Open the workspace">Ouvrir l'espace de travail</span></a>
+    </div>
+
+    <section class="nf-game">
+      <div class="nf-game-head">
+        <span data-en="Mini-game — catch the green packets, avoid the red ones!">Mini-jeu — rattrapez les paquets verts, évitez les rouges !</span>
+        <span class="nf-stats">
+          <span><span data-en="Score">Score</span>: <b id="nf-score">0</b></span>
+          <span><span data-en="Best">Meilleur</span>: <b id="nf-best">0</b></span>
+          <span><span data-en="Lives">Vies</span>: <b id="nf-lives">3</b></span>
+        </span>
+      </div>
+      <div class="nf-overlay">
+        <canvas id="nf-canvas" width="640" height="340"></canvas>
+        <div class="nf-start" id="nf-start">
+          <div>
+            <div data-en="Click or press Space to start">Cliquez ou appuyez sur Espace pour démarrer</div>
+            <br><small data-en="Move with ← → or the mouse">Déplacez-vous avec ← → ou la souris</small>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+  (function nfGame() {
+    const canvas = document.getElementById('nf-canvas');
+    const ctx = canvas.getContext('2d');
+    const scoreEl = document.getElementById('nf-score');
+    const bestEl = document.getElementById('nf-best');
+    const livesEl = document.getElementById('nf-lives');
+    const startEl = document.getElementById('nf-start');
+    const W = canvas.width, H = canvas.height;
+
+    let best = 0;
+    try { best = parseInt(localStorage.getItem('info-404-best') || '0', 10) || 0; } catch (e) {}
+    bestEl.textContent = best;
+
+    const basket = { x: W / 2 - 40, w: 80, h: 14 };
+    let packets = [], score = 0, lives = 3, running = false, spawnT = 0, speed = 1.6, raf = 0;
+    let keys = {};
+
+    function reset() {
+      packets = []; score = 0; lives = 3; speed = 1.6; spawnT = 0;
+      scoreEl.textContent = 0; livesEl.textContent = 3;
+    }
+
+    function spawn() {
+      const bad = Math.random() < 0.28;
+      packets.push({
+        x: 20 + Math.random() * (W - 40),
+        y: -20,
+        r: 11,
+        bad,
+        vy: speed + Math.random() * 1.4,
+      });
+    }
+
+    function step() {
+      if (!running) return;
+      ctx.clearRect(0, 0, W, H);
+
+      // clavier
+      if (keys['ArrowLeft']) basket.x -= 7;
+      if (keys['ArrowRight']) basket.x += 7;
+      basket.x = Math.max(0, Math.min(W - basket.w, basket.x));
+
+      // spawn
+      if (--spawnT <= 0) { spawn(); spawnT = Math.max(14, 42 - Math.floor(score / 3)); }
+
+      // paquets
+      for (let i = packets.length - 1; i >= 0; i--) {
+        const p = packets[i];
+        p.y += p.vy;
+        // collision avec le panier
+        if (p.y + p.r >= H - 30 && p.y - p.r < H - 16 &&
+            p.x > basket.x - p.r && p.x < basket.x + basket.w + p.r) {
+          if (p.bad) { lives--; livesEl.textContent = lives; }
+          else { score++; scoreEl.textContent = score; speed = 1.6 + score * 0.05; }
+          packets.splice(i, 1);
+          continue;
+        }
+        if (p.y - p.r > H) {
+          if (!p.bad) { lives--; livesEl.textContent = lives; }
+          packets.splice(i, 1);
+          continue;
+        }
+        // dessin
+        ctx.beginPath();
+        ctx.fillStyle = p.bad ? '#f26d6d' : '#96e6a0';
+        ctx.roundRect ? ctx.roundRect(p.x - p.r, p.y - p.r, p.r * 2, p.r * 2, 4)
+                      : ctx.rect(p.x - p.r, p.y - p.r, p.r * 2, p.r * 2);
+        ctx.fill();
+        ctx.fillStyle = '#0c1013';
+        ctx.font = 'bold 12px monospace';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(p.bad ? '!' : '//', p.x, p.y);
+      }
+
+      // panier
+      ctx.fillStyle = '#83d9ed';
+      ctx.fillRect(basket.x, H - 22, basket.w, basket.h);
+      ctx.fillStyle = '#0c1013';
+      ctx.fillRect(basket.x + 6, H - 18, basket.w - 12, 4);
+
+      if (lives <= 0) { gameOver(); return; }
+      raf = requestAnimationFrame(step);
+    }
+
+    function gameOver() {
+      running = false;
+      cancelAnimationFrame(raf);
+      if (score > best) { best = score; bestEl.textContent = best; try { localStorage.setItem('info-404-best', String(best)); } catch (e) {} }
+      ctx.fillStyle = '#080b0eee';
+      ctx.fillRect(0, 0, W, H);
+      ctx.fillStyle = '#96e6a0';
+      ctx.font = 'bold 28px monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText('GAME OVER', W / 2, H / 2 - 12);
+      ctx.fillStyle = '#a0adb4';
+      ctx.font = '14px monospace';
+      ctx.fillText((document.documentElement.lang === 'en' ? 'Score: ' : 'Score : ') + score, W / 2, H / 2 + 16);
+      startEl.style.display = 'grid';
+      startEl.querySelector('div > div').textContent = document.documentElement.lang === 'en' ? 'Click or press Space to retry' : 'Cliquez ou appuyez sur Espace pour rejouer';
+    }
+
+    function start() {
+      reset();
+      startEl.style.display = 'none';
+      running = true;
+      cancelAnimationFrame(raf);
+      step();
+    }
+
+    startEl.addEventListener('click', start);
+    document.addEventListener('keydown', (e) => {
+      if (e.code === 'Space' && !running && !overlayOpen()) { e.preventDefault(); start(); }
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') keys[e.key] = true;
+    });
+    document.addEventListener('keyup', (e) => { keys[e.key] = false; });
+    function overlayOpen() { return !document.querySelector('.gsearch')?.hidden; }
+    canvas.addEventListener('mousemove', (e) => {
+      const r = canvas.getBoundingClientRect();
+      const scaleX = W / r.width;
+      basket.x = Math.max(0, Math.min(W - basket.w, (e.clientX - r.left) * scaleX - basket.w / 2));
+    });
+    canvas.addEventListener('touchmove', (e) => {
+      e.preventDefault();
+      const r = canvas.getBoundingClientRect();
+      const scaleX = W / r.width;
+      basket.x = Math.max(0, Math.min(W - basket.w, (e.touches[0].clientX - r.left) * scaleX - basket.w / 2));
+    }, { passive: false });
+    canvas.addEventListener('click', () => { if (!running) start(); });
+  })();
+  </script>
+</body>
+</html>
