@@ -863,3 +863,4 @@ function initializeDocumentationPage() {
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addTrigger);
   else addTrigger();
 })();
+
